@@ -23,6 +23,28 @@ tools/                      rasmlarni qayta ishlash skriptlari
 `index.html` faylini brauzerda ochsangiz yetarli. Shriftlar va rasmlar
 loyiha ichida bo'lgani uchun internet kerak emas.
 
+## Coolify'da joylash
+
+Landing statik sayt. Coolify'da uni `Railpack` yoki `Web application` qilib
+ishga tushirmang, chunki saytda doimiy ishlaydigan server process yo'q.
+
+Repo ichidagi `Dockerfile` Nginx orqali barqaror static server tayyorlaydi.
+Coolify sozlamalari:
+
+- Build pack: `Dockerfile`
+- Base directory: `/`
+- Dockerfile location: `/Dockerfile`
+- Port: `80`
+
+Docker imijini lokal tekshirish:
+
+```sh
+docker build -t pushday-landing .
+docker run --rm -p 8080:80 pushday-landing
+```
+
+So'ngra brauzerda `http://localhost:8080` manzilini oching.
+
 ## Nima o'zgartiriladi
 
 **Telegram havolasi.** Ikkita joyda: `index.html` ichidagi
