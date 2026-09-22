@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PushDay — kunlik maqsadlaringizni nazorat qiladi</title>
+<meta name="description" content="PushDay — kunlik vazifalar, pomodoro taymer, statistika va chellenjlar bir joyda. Telegram'da ishlaydi, o'rnatish shart emas.">
+<meta name="theme-color" content="#F7F2ED">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PushDay — sizning kunlik maqsadlaringizni nazorat qiladi!">
+<meta property="og:description" content="Kunlik vazifalar, fokus taymeri, statistika va chellenjlar bitta ilovada.">
+<meta property="og:image" content="assets/screens/web/01-vazifa.webp">
+<meta property="og:locale" content="uz_UZ">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2317212B'/%3E%3Cpath d='M9 16.5l4.6 4.6L23 11.7' stroke='%23F8BE4B' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<link rel="preload" href="assets/fonts/poppins-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/styles.css?v=4">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+<header class="site-header" id="top">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="#top" aria-label="PushDay">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28"><rect width="32" height="32" rx="9" fill="#17212B"/><path d="M9 16.5l4.6 4.6L23 11.7" stroke="#F8BE4B" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand__name">Push<span>Day</span></span>
+    </a>
+
+    <nav class="site-nav" aria-label="Bo'limlar">
+      <a href="#vazifa">Vazifa</a>
+      <a href="#pomodoro">Pomodoro</a>
+      <a href="#statistika">Statistika</a>
+      <a href="#chellenj">Chellenj</a>
+    </nav>
+
+    <a class="btn btn--primary btn--sm" href="https://t.me/pushdaybot" data-bot-link>Botni ochish</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================== HERO ============================== -->
+  <section class="hero" id="vazifa">
+    <div class="hero__glow hero__glow--a" aria-hidden="true"></div>
+    <div class="hero__glow hero__glow--b" aria-hidden="true"></div>
+
+    <div class="wrap hero__inner">
+      <div class="hero__copy">
+        <h1 class="hero__title">PushDay &mdash; sizning<br class="br-lg"> kunlik maqsadlaringizni<br class="br-lg"> <em>nazorat qiladi!</em></h1>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="https://t.me/pushdaybot" data-bot-link>Botni ochish</a>
+          <a class="btn btn--ghost" href="#pomodoro">Qanday ishlaydi</a>
+        </div>
+      </div>
+
+      <div class="hero__media reveal">
+        <figure class="phone phone--hero">
+          <div class="phone__screen">
+            <img
+              src="assets/screens/web/01-vazifa.webp"
+              srcset="assets/screens/web/01-vazifa.webp 564w, assets/screens/web/01-vazifa@2x.webp 1128w"
+              sizes="(min-width: 1080px) 352px, min(76vw, 352px)"
+              width="564" height="1605"
+              alt="PushDay Vazifa ekrani: bugungi vazifalar ro'yxati, bajarilish foizi va kunlik natija"
+              fetchpriority="high" decoding="async">
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 02 POMODORO ============================ -->
+  <section class="feature feature--flip" id="pomodoro">
+    <div class="wrap feature__inner">
+      <div class="feature__copy reveal">
+        <h2 class="feature__title">Vazifalaringizga fokus qarating</h2>
+      </div>
+
+      <div class="feature__media reveal">
+        <figure class="phone">
+          <div class="phone__screen">
+            <img
+              src="assets/screens/web/02-pomodoro.webp"
+              srcset="assets/screens/web/02-pomodoro.webp 564w, assets/screens/web/02-pomodoro@2x.webp 1128w"
+              sizes="(min-width: 1080px) 340px, min(74vw, 340px)"
+              width="564" height="1605"
+              alt="PushDay Pomodoro ekrani: 25 daqiqalik fokus taymeri va vazifalar bo'yicha sarflangan vaqt"
+              loading="lazy" decoding="async">
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== 03 STATISTIKA =========================== -->
+  <section class="feature" id="statistika">
+    <div class="wrap feature__inner">
+      <div class="feature__copy reveal">
+        <h2 class="feature__title">Natijalaringizni kuzatib boring</h2>
+      </div>
+
+      <div class="feature__media reveal">
+        <figure class="phone">
+          <div class="phone__screen">
+            <img
+              src="assets/screens/web/03-statistika.webp"
+              srcset="assets/screens/web/03-statistika.webp 564w, assets/screens/web/03-statistika@2x.webp 1128w"
+              sizes="(min-width: 1080px) 340px, min(74vw, 340px)"
+              width="564" height="1605"
+              alt="PushDay Statistika ekrani: oylik kalendar, fokus vaqti va vazifalar bo'yicha tahlil"
+              loading="lazy" decoding="async">
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 04 CHELLENJ ============================ -->
+  <section class="feature feature--flip" id="chellenj">
+    <div class="wrap feature__inner">
+      <div class="feature__copy reveal">
+        <h2 class="feature__title">Chellenjlar bilan odat shakllantiring</h2>
+      </div>
+
+      <div class="feature__media reveal">
+        <figure class="phone">
+          <div class="phone__screen">
+            <img
+              src="assets/screens/web/04-chellenj.webp"
+              srcset="assets/screens/web/04-chellenj.webp 564w, assets/screens/web/04-chellenj@2x.webp 1128w"
+              sizes="(min-width: 1080px) 340px, min(74vw, 340px)"
+              width="564" height="1605"
+              alt="PushDay Chellenj ekrani: faol chellenjlar va kunlik bajarilish jadvali"
+              loading="lazy" decoding="async">
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= CTA ============================= -->
+  <section class="cta" id="boshlash">
+    <div class="wrap">
+      <div class="cta__card reveal">
+        <h2 class="cta__title">Har kuni bir qadam &mdash; PushDay nazorat qiladi</h2>
+        <a class="btn btn--amber" href="https://t.me/pushdaybot" data-bot-link>Botni ochish</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <span class="brand__name brand__name--sm">Push<span>Day</span></span>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>
