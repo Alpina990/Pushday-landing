@@ -5,6 +5,8 @@
 
   var header = document.querySelector('.site-header');
   var bar = document.querySelector('.progress__bar');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  var atTop = true;
 
   function onScroll() {
     var y = window.scrollY || document.documentElement.scrollTop;
@@ -18,6 +20,16 @@
       var ratio = max > 0 ? Math.min(1, Math.max(0, y / max)) : 0;
       bar.style.width = (ratio * 100).toFixed(2) + '%';
     }
+
+    var nowAtTop = y <= 8;
+    if (nowAtTop && !atTop) {
+      items.forEach(function (el) {
+        if (el.getBoundingClientRect().top >= window.innerHeight) {
+          el.classList.remove('is-visible');
+        }
+      });
+    }
+    atTop = nowAtTop;
   }
 
   var ticking = false;
@@ -37,21 +49,42 @@
   onScroll();
 
   /* reveal sections as they come into view */
-  var items = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!reduce && 'IntersectionObserver' in window) {
     var seen = 0;
+    var revealTimers = new WeakMap();
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
+          var target = entry.target;
+
+          if (!entry.isIntersecting) {
+            var pendingTimer = revealTimers.get(target);
+            if (pendingTimer) {
+              window.clearTimeout(pendingTimer);
+              revealTimers.delete(target);
+            }
+
+            if (entry.boundingClientRect.bottom < 0) {
+              target.classList.remove('is-visible');
+            }
+            return;
+          }
+
+          if (target.classList.contains('is-visible') || revealTimers.has(target)) return;
+
           var delay = Math.min(seen, 3) * 90;
           seen += 1;
-          window.setTimeout(function () {
-            entry.target.classList.add('is-visible');
-          }, delay);
-          observer.unobserve(entry.target);
+          revealTimers.set(
+            target,
+            window.setTimeout(function () {
+              revealTimers.delete(target);
+              if (target.getBoundingClientRect().bottom > 0) {
+                target.classList.add('is-visible');
+              }
+            }, delay)
+          );
         });
       },
       { rootMargin: '0px 0px -12% 0px', threshold: 0.15 }
