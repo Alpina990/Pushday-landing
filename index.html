@@ -10,14 +10,6 @@
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#070A18">
   <link rel="icon" href="assets/logo.png" type="image/png">
-  <script>
-    (function () {
-      var mode = new URLSearchParams(window.location.search).get('mode');
-      if (mode === 'mobile' || mode === 'desktop') {
-        document.documentElement.setAttribute('data-view', mode);
-      }
-    })();
-  </script>
   <link rel="stylesheet" href="assets/styles.css?v=6">
 </head>
 <body class="onepage">
@@ -35,30 +27,6 @@
   <main id="top">
     <div class="hero">
       <div class="wrap hero-solo">
-        <div class="mobile-feed" aria-label="PushDay mobil ilova ko'rinishi">
-          <div class="mobile-device">
-            <div class="mobile-device-screen">
-              <div class="mobile-device-bar">
-                <a class="mobile-device-logo" href="#top" aria-label="PushDay bosh sahifa">
-                  <img src="assets/logo.png" alt="" width="256" height="256">
-                  PushDay
-                </a>
-              </div>
-
-              <div class="mobile-device-feed">
-                <img src="assets/screens/web/mobile-full.webp" alt="PushDay mobil versiyasi: vazifalar, pomodoro, statistika va chellenjlar" width="780" height="6060" fetchpriority="high">
-              </div>
-
-              <a class="btn btn-tg mobile-device-start" data-bot href="#" aria-label="PushDay botini Telegramda boshlash">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M21.9 4.3 18.7 19c-.24 1.06-.87 1.32-1.76.82l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.55-.6-.2L6.36 12.9l-4.8-1.5c-1.04-.33-1.06-1.04.22-1.54l18.76-7.23c.87-.32 1.63.2 1.36 1.67Z"/>
-                </svg>
-                START
-              </a>
-            </div>
-          </div>
-        </div>
-
         <div class="desktop-hero">
           <h1><em>PushDay</em> - sizning kunlik maqsadlaringizni nazorat qiladi!</h1>
 
